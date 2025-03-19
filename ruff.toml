@@ -1,0 +1,36 @@
+[tool.ruff]
+
+# Enable or disable specific rules
+select = [
+    "E",  # Errors
+    "W",  # Warnings
+    "F",  # Formatting issues
+]
+
+# Ignore specific rules (optional)
+ignore = [
+    "E501",  # Line length (if you want to allow longer lines)
+]
+
+# Set maximum line length (default is 88, adjust if needed)
+line-length = 79
+
+# Enable or disable specific checks
+extend-ignore = [
+    "W503",  # Line break before binary operator (PEP 8 allows this)
+]
+
+# Configure additional settings
+per-file-ignores = {
+    # Ignore specific rules for certain files or directories
+    "migrations/*": ["E501"],  # Example: ignore line length in tests
+}
+
+# Specify formatting options
+fix = true  # Automatically fix issues where possible
+
+# Specify the Python version being used
+target-version = "py310"  # Adjust to your target Python version
+
+# Enable type checking if you are using type hints
+type-checking = true
